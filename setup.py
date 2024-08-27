@@ -92,7 +92,8 @@ cmdclass = {}
 ext_modules = []
 
 # Only install CUDA extensions if available
-if 'cu' in torch.__version__ and CUDA_HOME is not None:
+# if 'cu' in torch.__version__ and CUDA_HOME is not None:
+if CUDA_HOME is not None:
 
     cmdclass = {'build_ext': BuildExtension}
     nvcc_flags = ['--ptxas-options=-v', '--optimize=2']
